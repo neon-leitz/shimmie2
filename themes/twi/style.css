@@ -86,12 +86,11 @@ img {
     }
 
     a:visited {
-        color: #00EE00;
         color: var(--hl-2);
     }
 
     a:active {
-        color: orange;
+        color: var(--text-main);
     }
 }
 
@@ -289,6 +288,10 @@ nav select {
     padding: 0;
 }
 
+nav .comment {
+    background: var(--bg-body);
+}
+
 table.image_info {
   border-collapse: collapse
 }
@@ -377,18 +380,27 @@ ARTICLE TABLE {
     margin-top: 32px;
 }
 
+
+.shm-image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.shm-image-list .thumb,
 .thumb {
     width: 226px;
     display: inline-block;
     zoom: 1; /* ie6 */
     display: inline; /* ie6 */
     text-align: center;
-    margin-bottom: 8px;
+    margin: 1rem 0;
 }
 .thumb IMG {
-    border: 1px solid #CCC;
-    background: #DDD;
-    padding: 8px;
+    /* border: 1px solid var(--hl-2); */
+    background: var(--bg-main);
+    /* padding: 8px; */
     border-radius: 12px; /* standard, webkit, opera */
     -moz-border-radius: 12px; /* mozilla haven't committed yet */
     box-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* standard, opera */
@@ -402,18 +414,25 @@ ARTICLE TABLE {
   border-width: 0.25em;
 }
 
+.thumb img:hover {
+    transform: scale(1.15);
+}
+
 /* --------------- */
 /* Tag edit cloud  */
 /* --------------- */
 #tageditcloud span.tag-category > span {
-    background: hsl(0deg 0% 94.17%);
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    padding: 0.25rem 0.5rem;
     line-height: 2rem;
     border-radius: 0.25rem;
+    color: var(--text-heading);
+    background: var(--bg-heading);
 }
 
-#tageditcloud span.tag-category .tag-selected {
-    background: #88EE88;
+#tageditcloud span.tag-category span.tag-selected {
+    background: black;
+    color: var(--text-heading);
+    border: none;
 }
 
 /* ----------------------- */
