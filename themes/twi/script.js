@@ -1,6 +1,5 @@
 
 function hide_nav(nav, others, body) {
-    // let nav = document.querySelector("nav");
     nav.classList.add("hide-nav");
     nav.classList.remove("show-nav");
     // Remove overlay
@@ -39,8 +38,15 @@ if (window.matchMedia("(max-width: 1000px) or (max-aspect-ratio: 4/5)").matches)
         } else {
             show_nav(nav, others, body);
         }
-
     });
+
+    others.forEach(ele => ele.addEventListener("click", e => {
+        let nav = document.querySelector("nav");
+        let body = document.querySelector("body");
+        if (nav.classList.contains("show-nav")) {
+            hide_nav(nav, others, body);
+        }
+    }));
 
     h1.appendChild(div);
 }
